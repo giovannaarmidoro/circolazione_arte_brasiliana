@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inizio | Arte brasiliana in circolazione</title>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.Title" content="Arte brasiliana in circolazione">
+<meta name="DC.Creator" content="Giovanna Boccucci Armidoro">
+<meta name="DC.Subject" content="Arte brasiliana; musei; circolazione delle opere; biografia degli oggetti">
+<meta name="DC.Description" content="Raccolta digitale di opere di artisti brasiliani conservate in musei fuori dal Brasile, secondo l'approccio della biografia degli oggetti.">
+<meta name="DC.Publisher" content="Università di Bologna">
+<meta name="DC.Date" content="2026">
+<meta name="DC.Type" content="Collection">
+<meta name="DC.Format" content="text/html">
+<meta name="DC.Identifier" content="[URL di GitHub Pages]">
+<meta name="DC.Language" content="it">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Arte brasiliana in circolazione</h1>
+<nav>
+<a href="index.html">Inizio</a>
+<a href="catalogo.html">Catalogo</a>
+<a href="item.html">Scheda</a>
+<a href="dati.html">Dati</a>
+<div class="dropdown">
+<button class="dropbtn" type="button">Modalità di accesso &#9662;</button>
+<div class="dropdown-content">
+<a href="catalogo.html#alfabetica">Elenco alfabetico</a>
+<a href="index.html#mappa">Mappa dei musei</a>
+<a href="catalogo.html#ricerca">Ricerca libera</a>
+<a href="catalogo.html#movimenti">Movimenti artistici</a>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<section class="slideshow" aria-label="Opere del progetto">
+<div class="slide c1" data-id="item01">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Abaporu"> -->
+<h3>Abaporu</h3>
+<p>Tarsila do Amaral | MALBA, Buenos Aires</p>
+<a href="item.html?id=item01">Vai alla scheda</a>
+</div>
+<div class="slide c2" data-id="item02">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="A Lua"> -->
+<h3>A Lua</h3>
+<p>Tarsila do Amaral | MoMA, New York</p>
+<a href="item.html?id=item02">Vai alla scheda</a>
+</div>
+<div class="slide c3" data-id="item03">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Guerra e Paz"> -->
+<h3>Guerra e Paz</h3>
+<p>Candido Portinari | Sede dell'ONU, New York</p>
+<a href="item.html?id=item03">Vai alla scheda</a>
+</div>
+<div class="slide c4" data-id="item04">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Danse populaire brésilienne"> -->
+<h3>Danse populaire brésilienne</h3>
+<p>Di Cavalcanti | Centre Pompidou, Parigi</p>
+<a href="item.html?id=item04">Vai alla scheda</a>
+</div>
+<div class="slide c5" data-id="item05">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Babel"> -->
+<h3>Babel</h3>
+<p>Cildo Meireles | Tate Modern, Londra</p>
+<a href="item.html?id=item05">Vai alla scheda</a>
+</div>
+<div class="slide c6" data-id="item06">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Bicho (Máquina)"> -->
+<h3>Bicho (Máquina)</h3>
+<p>Lygia Clark | MFAH, Houston</p>
+<a href="item.html?id=item06">Vai alla scheda</a>
+</div>
+<div class="slide c7" data-id="item07">
+<!-- Per usare l'immagine dell'opera: <img src="img/file.jpg" alt="Green Tilework in Live Flesh"> -->
+<h3>Green Tilework in Live Flesh</h3>
+<p>Adriana Varejão | Tate Modern, Londra</p>
+<a href="item.html?id=item07">Vai alla scheda</a>
+</div>
+<button class="prev" type="button" aria-label="Precedente">&#10094;</button>
+<button class="next" type="button" aria-label="Successivo">&#10095;</button>
+</section>
+<section id="progetto">
+<h2>Sul progetto</h2>
+<p>Il progetto propone uno sguardo non eurocentrico sulla produzione e sul mercato dell'arte, mettendo al centro la circolazione delle opere: dieci schede tra opere di artisti brasiliani conservate in musei fuori dal Brasile e documenti collegati (un testo e due video).</p>
+<p>Ogni oggetto è raccontato attraverso la sua biografia (Kopytoff; Gosden e Marshall), letta con Vogel e Clifford: creazione, vendita, donazione, esposizione, restauro.</p>
+</section>
+<section id="mappa">
+<h2>Dove si trovano le opere</h2>
+<div id="map"></div>
+</section>
+</main>
+<footer><p>Progetto di Digital Humanities e patrimonio culturale, Università di Bologna.</p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/opere.js"></script>
+<script>
+// Carosello
+var slides = document.querySelectorAll(".slide"), attuale = 0;
+function mostra(n) {
+  attuale = (n + slides.length) % slides.length;
+  slides.forEach(function (s, i) { s.classList.toggle("active", i === attuale); });
+}
+document.querySelector(".prev").onclick = function () { mostra(attuale - 1); };
+document.querySelector(".next").onclick = function () { mostra(attuale + 1); };
+mostra(0);
+
+// Nelle schede del carosello: immagine (se il file esiste in img/) e link alla fonte
+slides.forEach(function (sl) {
+  var o = OPERE.find(function (x) { return x.id === sl.getAttribute("data-id"); });
+  if (!o) return;
+  var img = new Image();
+  img.onload = function () { img.alt = o.titolo; sl.insertBefore(img, sl.firstChild); };
+  img.src = o.immagine;
+  if (o.fonte_url) {
+    var l = document.createElement("a");
+    l.href = o.fonte_url; l.target = "_blank"; l.rel = "noopener";
+    l.textContent = "Vedi sul sito della fonte";
+    sl.appendChild(l);
+  }
+});
+
+// Mappa dei musei (Leaflet)
+if (typeof L !== "undefined") {
+var mappa = L.map("map").setView([30, -30], 2);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap" }).addTo(mappa);
+var musei = [
+  ["MALBA, Buenos Aires", -34.5771, -58.4044, "Abaporu (Tarsila do Amaral)"],
+  ["MoMA, New York", 40.7614, -73.9776, "A Lua (Tarsila do Amaral)"],
+  ["Sede dell'ONU, New York", 40.7489, -73.9680, "Guerra e Paz (Portinari)"],
+  ["Centre Pompidou, Parigi", 48.8606, 2.3522, "Danse populaire brésilienne (Di Cavalcanti)"],
+  ["Tate Modern, Londra", 51.5076, -0.0994, "Babel (Cildo Meireles); Green Tilework in Live Flesh (Adriana Varejão)"],
+  ["MFAH, Houston", 29.7259, -95.3908, "Bicho (Máquina) (Lygia Clark)"]
+];
+musei.forEach(function (m) {
+  L.marker([m[1], m[2]]).addTo(mappa).bindPopup("<b>" + m[0] + "</b><br>" + m[3]);
+});
+}
+</script>
+</body>
+</html>

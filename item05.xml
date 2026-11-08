@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Babel</dc:title>
+  <dc:creator>Cildo Meireles</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/96556493/</dcterms:creator>
+  <dc:subject>Arte concettuale</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300264827</dcterms:subject>
+  <dc:description xml:lang="it">Installazione di Cildo Meireles formata da una torre di radio usate, con suono e luce; acquistata congiuntamente dalla Tate e dalla D.Daskalopoulos Collection nel 2013.</dc:description>
+  <dc:publisher>Tate Modern</dc:publisher>
+  <dc:date>2001</dc:date>
+  <dc:type>PhysicalObject</dc:type>
+  <dc:type xml:lang="it">installazione</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item05</dc:identifier>
+  <dc:identifier>T14041</dc:identifier>
+  <dc:source>https://www.tate.org.uk/art/artworks/meireles-babel-t14041</dc:source>
+  <dcterms:relation>item09.xml</dcterms:relation>
+  <dc:coverage>Londra</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/2643743/london.html</dcterms:spatial>
+  <dcterms:provenance xml:lang="en">Purchased jointly by Tate, London (with the assistance of the Latin American Acquisitions Committee) and the D.Daskalopoulos Collection, 2013, as a promised gift to Tate</dcterms:provenance>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300430631</dcterms:medium>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

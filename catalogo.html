@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogo | Arte brasiliana in circolazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Arte brasiliana in circolazione</h1>
+<nav>
+<a href="index.html">Inizio</a>
+<a href="catalogo.html">Catalogo</a>
+<a href="item.html">Scheda</a>
+<a href="dati.html">Dati</a>
+<div class="dropdown">
+<button class="dropbtn" type="button">Modalità di accesso &#9662;</button>
+<div class="dropdown-content">
+<a href="catalogo.html#alfabetica">Elenco alfabetico</a>
+<a href="index.html#mappa">Mappa dei musei</a>
+<a href="catalogo.html#ricerca">Ricerca libera</a>
+<a href="catalogo.html#movimenti">Movimenti artistici</a>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<h2>Catalogo</h2>
+<section id="ricerca">
+<h3>Ricerca libera</h3>
+<input type="search" id="q" placeholder="Cerca per titolo, artista, museo, movimento…" aria-label="Ricerca libera">
+</section>
+<section id="movimenti">
+<h3>Movimenti artistici</h3>
+<div id="chips"></div>
+</section>
+<section id="alfabetica">
+<h3>Elenco alfabetico per artista</h3>
+<p id="conteggio"></p>
+<div id="elenco"></div>
+</section>
+</main>
+<footer><p>Progetto di Digital Humanities e patrimonio culturale, Università di Bologna.</p></footer>
+<script src="data/opere.js"></script>
+<script>
+var testo = "", movimento = "";
+function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+// Pulsanti dei movimenti artistici
+var movimenti = [];
+OPERE.forEach(function (o) { if (movimenti.indexOf(o.movimento) < 0) movimenti.push(o.movimento); });
+movimenti.sort(function (a, b) { return a.localeCompare(b, "it"); });
+function disegnaChips() {
+  var h = '<button type="button" class="chip' + (movimento === "" ? " attivo" : "") + '" data-m="">Tutti</button>';
+  movimenti.forEach(function (m) {
+    h += '<button type="button" class="chip' + (movimento === m ? " attivo" : "") + '" data-m="' + esc(m) + '">' + esc(m) + "</button>";
+  });
+  document.getElementById("chips").innerHTML = h;
+  document.querySelectorAll(".chip").forEach(function (b) {
+    b.onclick = function () { movimento = b.getAttribute("data-m"); disegnaChips(); disegnaElenco(); };
+  });
+}
+
+// Elenco alfabetico (per cognome dell'artista), con filtri
+function disegnaElenco() {
+  var q = testo.toLowerCase();
+  var lista = OPERE.filter(function (o) {
+    var okMov = !movimento || o.movimento === movimento;
+    var pagliaio = [o.titolo, o.artista, o.museo, o.citta, o.paese, o.movimento, o.tipo, o.descrizione].join(" ").toLowerCase();
+    return okMov && (!q || pagliaio.indexOf(q) >= 0);
+  });
+  lista.sort(function (a, b) { return a.artista_ordine.localeCompare(b.artista_ordine, "it") || a.titolo.localeCompare(b.titolo, "it"); });
+  document.getElementById("conteggio").textContent = lista.length + (lista.length === 1 ? " risultato" : " risultati");
+  var h = "", lettera = "";
+  lista.forEach(function (o) {
+    var l = o.artista_ordine.charAt(0).toUpperCase();
+    if (l !== lettera) { h += '<h4 class="lettera">' + esc(l) + "</h4>"; lettera = l; }
+    var dove = [o.museo, o.citta].filter(Boolean).join(", ");
+    h += '<article class="scheda"><h5><a href="item.html?id=' + o.id + '">' + esc(o.titolo) + "</a></h5>";
+    h += "<p>" + esc(o.artista) + (o.data ? ", " + esc(o.data) : "") + "</p>";
+    h += "<p><small>" + esc(o.tipo) + (dove ? " | " + esc(dove) : "") + "</small></p></article>";
+  });
+  document.getElementById("elenco").innerHTML = h || "<p>Nessun risultato.</p>";
+}
+document.getElementById("q").oninput = function () { testo = this.value; disegnaElenco(); };
+disegnaChips();
+disegnaElenco();
+</script>
+</body>
+</html>

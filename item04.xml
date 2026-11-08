@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Danse populaire brésilienne</dc:title>
+  <dcterms:alternative>Scène brésilienne</dcterms:alternative>
+  <dc:creator>Di Cavalcanti</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/67301515/</dcterms:creator>
+  <dcterms:creator xsi:type="dcterms:URI">http://vocab.getty.edu/ulan/500118122</dcterms:creator>
+  <dc:subject>Modernismo brasiliano</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Dipinto di Di Cavalcanti realizzato a Parigi, probabilmente nel 1937, acquistato dallo Stato francese nel 1939.</dc:description>
+  <dc:publisher>Centre Pompidou</dc:publisher>
+  <dc:date>ca. 1937</dc:date>
+  <dc:type>StillImage</dc:type>
+  <dc:type xml:lang="it">dipinto</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item04</dc:identifier>
+  <dc:identifier>JP 899 P</dc:identifier>
+  <dc:source>https://www.centrepompidou.fr/fr/ressources/oeuvre/31PHH6G</dc:source>
+  <dc:coverage>Parigi</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/2988507/paris.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Olio su tela</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300015050</dcterms:medium>
+  <dcterms:extent>114 x 146 cm</dcterms:extent>
+  <dcterms:provenance xml:lang="fr">Achat de l'Etat, 1939; Attribution, 1939</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

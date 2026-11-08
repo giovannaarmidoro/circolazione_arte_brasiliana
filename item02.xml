@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>A Lua</dc:title>
+  <dcterms:alternative>The Moon</dcterms:alternative>
+  <dc:creator>Tarsila do Amaral</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/18032903/</dcterms:creator>
+  <dc:subject>Modernismo e Antropofagia</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Paesaggio di Tarsila do Amaral del 1928, esempio di antropofagia; è entrato al MoMA per dono (per scambio).</dc:description>
+  <dc:publisher>MoMA</dc:publisher>
+  <dc:date>1928</dc:date>
+  <dc:type>StillImage</dc:type>
+  <dc:type xml:lang="it">dipinto</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item02</dc:identifier>
+  <dc:identifier>1.2019</dc:identifier>
+  <dc:source>https://www.moma.org/collection/works/199984</dc:source>
+  <dcterms:relation>item08.xml</dcterms:relation>
+  <dc:coverage>New York</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/5128581/new-york-city.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Olio su tela</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300015050</dcterms:medium>
+  <dcterms:extent>110 x 110 cm</dcterms:extent>
+  <dcterms:provenance xml:lang="en">Gift of Joan H. Tisch (by exchange)</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

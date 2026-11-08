@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Documenti su Guerra e Paz</dc:title>
+  <dc:creator>Progetto Portinari</dc:creator>
+  <dc:subject>Modernismo brasiliano</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Documenti sul montaggio e il restauro dei pannelli Guerra e Paz, raccolti dal Progetto Portinari.</dc:description>
+  <dc:publisher>Google Arts &amp; Culture</dc:publisher>
+  <dc:type>MovingImage</dc:type>
+  <dc:type xml:lang="it">video</dc:type>
+  <dc:format>text/html</dc:format>
+  <dc:identifier>item10</dc:identifier>
+  <dc:source>https://artsandculture.google.com/exhibit/war-and-peace-project/FQKian5kxMumKQ?hl=pt-br</dc:source>
+  <dcterms:relation>item03.xml</dcterms:relation>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

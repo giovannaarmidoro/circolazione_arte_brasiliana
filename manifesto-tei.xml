@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader xml:lang="it">
+    <fileDesc>
+      <titleStmt>
+        <title>Manifesto Antropófago</title>
+        <author ref="#oswald https://viaf.org/viaf/39372900/">Oswald de Andrade</author>
+        <respStmt><resp>Codifica in TEI</resp><name>Giovanna Boccucci Armidoro</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Giovanna Boccucci Armidoro, Università di Bologna</publisher>
+        <availability><p>Testo originale del 1928; verificare la situazione dei diritti prima della pubblicazione.</p></availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl><title level="j">Revista de Antropofagia</title>, anno 1, n. 1, maggio 1928, São Paulo.
+          <ref target="https://digital.bbm.usp.br/view/?45000033273&amp;bbm/7064#page/2/mode/2up">Facsimile digitale (Biblioteca Brasiliana Guita e José Mindlin, USP)</ref></bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc><p>Codifica realizzata per il progetto "Arte brasiliana in circolazione" (scheda 8).</p></projectDesc>
+      <editorialDecl>
+        <p>Modello di descrizione dei fenomeni del testo: nomi di persona (persName, con @type historical, character, myth o biblical), nomi di luogo (placeName), concetti chiave (term: antropofagia; tabù e totem), parole e frasi in altra lingua (foreign), discorsi citati (q), versi del ritornello in tupi (lg e l) e chiusa con firma e data (closer).</p>
+        <p>La grafia del testo ricevuto è stata mantenuta, comprese forme che potrebbero essere errori di trascrizione ("Montaig-ne", "Suprimarnos", "orecular", "Caminhamos.."): da verificare sul facsimile. Il segno "(**)" indica una nota dell'edizione, il cui testo non è stato incluso. Sono stati tolti un'ultima virgoletta isolata e l'indicazione della fonte, spostata nell'intestazione.</p>
+      </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage><language ident="pt">portoghese</language><language ident="en">inglese</language><language ident="fr">francese</language><language ident="tup">tupi</language></langUsage>
+      <particDesc>
+        <listPerson>
+            <person xml:id="oswald" sameAs="https://viaf.org/viaf/39372900/ https://www.wikidata.org/entity/Q561169"><persName>Oswald de Andrade</persName></person>
+            <person xml:id="freud" sameAs="https://www.wikidata.org/entity/Q9215"><persName>Sigmund Freud</persName></person>
+            <person xml:id="levybruhl"><persName>Lucien Lévy-Bruhl</persName></person>
+            <person xml:id="villegaignon"><persName>Nicolas Durand de Villegagnon</persName></person>
+            <person xml:id="montaigne"><persName>Michel de Montaigne</persName></person>
+            <person xml:id="rousseau" sameAs="https://www.wikidata.org/entity/Q6527"><persName>Jean-Jacques Rousseau</persName></person>
+            <person xml:id="keyserling"><persName>Hermann von Keyserling</persName></person>
+            <person xml:id="vieira"><persName>Padre Antônio Vieira</persName></person>
+            <person xml:id="wjames"><persName>William James</persName></person>
+            <person xml:id="voronoff"><persName>Serge Voronoff</persName></person>
+            <person xml:id="goethe" sameAs="https://www.wikidata.org/entity/Q5879"><persName>Johann Wolfgang von Goethe</persName></person>
+            <person xml:id="joaovi"><persName>D. João VI</persName></person>
+            <person xml:id="napoleao" sameAs="https://www.wikidata.org/entity/Q517"><persName>Napoleone Bonaparte</persName></person>
+            <person xml:id="cesar" sameAs="https://www.wikidata.org/entity/Q1048"><persName>Giulio Cesare</persName></person>
+            <person xml:id="cairu"><persName>Visconde de Cairu</persName></person>
+            <person xml:id="catarina"><persName>Caterina de' Medici</persName></person>
+            <person xml:id="mariz"><persName>D. Antônio de Mariz</persName></person>
+            <person xml:id="anchieta"><persName>José de Anchieta</persName></person>
+            <person xml:id="ramalho"><persName>João Ramalho</persName></person>
+            <person xml:id="pitt"><persName>Pitt</persName></person>
+            <person xml:id="alencar"><persName>José de Alencar</persName></person>
+            <person xml:id="galli"><persName>Galli Mathias</persName></person>
+            <person xml:id="sardinha"><persName>Bispo Sardinha</persName></person>
+            <person xml:id="mariafonte"><persName>Maria da Fonte</persName></person>
+            <person xml:id="moises" sameAs="https://www.wikidata.org/entity/Q9077"><persName>Mosè</persName></person>
+            <person xml:id="guaraci"><persName>Guaraci</persName></person>
+            <person xml:id="jaci"><persName>Jaci</persName></person>
+            <person xml:id="cristo" sameAs="https://www.wikidata.org/entity/Q302"><persName>Cristo</persName></person>
+        </listPerson>
+      </particDesc>
+      <settingDesc>
+        <listPlace>
+            <place xml:id="brasil"><placeName>Brasile</placeName><idno type="geonames">https://www.geonames.org/3469034/federative-republic-of-brazil.html</idno></place>
+            <place xml:id="portugal"><placeName>Portogallo</placeName><idno type="geonames">https://www.geonames.org/2264397/portugal.html</idno></place>
+            <place xml:id="bahia"><placeName>Bahia</placeName></place>
+            <place xml:id="belem"><placeName>Belém do Pará</placeName></place>
+            <place xml:id="europa"><placeName>Europa</placeName><idno type="geonames">https://www.geonames.org/6255148/europe.html</idno></place>
+            <place xml:id="america"><placeName>América</placeName></place>
+            <place xml:id="finisterra"><placeName>Cabo Finisterra</placeName></place>
+            <place xml:id="pindorama"><placeName>Pindorama</placeName></place>
+            <place xml:id="piratininga"><placeName>Piratininga</placeName></place>
+            <place xml:id="saopaulo"><placeName>São Paulo</placeName><idno type="geonames">https://www.geonames.org/3448439/sao-paulo.html</idno></place>
+        </listPlace>
+      </settingDesc>
+      <textClass>
+        <keywords><term>Antropofagia</term><term>Modernismo brasiliano</term></keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc><change when="2026-10-17">Prima codifica in TEI.</change></revisionDesc>
+  </teiHeader>
+  <text xml:lang="pt">
+    <body>
+      <div type="manifesto">
+        <p>Só a <term ref="#antropofagia">Antropofagia</term> nos une. Socialmente. Economicamente. Filosoficamente.</p>
+        <p>Única lei do mundo. Expressão mascarada de todos os individualismos, de todos os coletivismos. De todas as religiões. De todos os tratados de paz.</p>
+        <p><foreign xml:lang="en">Tupi, or not tupi that is the question.</foreign></p>
+        <p>Contra todas as catequeses. E contra a mãe dos Gracos.</p>
+        <p>Só me interessa o que não é meu. Lei do homem. Lei do <term ref="#antropofagia">antropófago</term>.</p>
+        <p>Estamos fatigados de todos os maridos católicos suspeitosos postos em drama. <persName ref="#freud" type="historical">Freud</persName> acabou com o enigma mulher e com outros sustos da psicologia impressa.</p>
+        <p>O que atropelava a verdade era a roupa, o impermeável entre o mundo interior e o mundo exterior. A reação contra o homem vestido. O cinema americano informará.</p>
+        <p>Filhos do sol, mãe dos viventes. Encontrados e amados ferozmente, com toda a hipocrisia da saudade, pelos imigrados, pelos traficados e pelos touristes. No país da cobra grande.</p>
+        <p>Foi porque nunca tivemos gramáticas, nem coleções de velhos vegetais. E nunca soubemos o que era urbano, suburbano, fronteiriço e continental. Preguiçosos no mapa-múndi do <placeName ref="#brasil">Brasil</placeName>.</p>
+        <p>Uma consciência participante, uma rítmica religiosa.</p>
+        <p>Contra todos os importadores de consciência enlatada. A existência palpável da vida. E a mentalidade pré-lógica para o Sr. <persName ref="#levybruhl" type="historical">Lévy-Bruhl</persName> estudar.</p>
+        <p>Queremos a Revolução Caraiba. Maior que a Revolução Francesa. A unificação de todas as revoltas eficazes na direção do homem. Sem nós a <placeName ref="#europa">Europa</placeName> não teria sequer a sua pobre declaração dos direitos do homem.</p>
+        <p>A idade de ouro anunciada pela <placeName ref="#america">América</placeName>. A idade de ouro. E todas as <foreign xml:lang="en">girls</foreign>.</p>
+        <p>Filiação. O contato com o <placeName ref="#brasil">Brasil</placeName> Caraíba. <foreign xml:lang="fr">Ori <persName ref="#villegaignon" type="historical">Villegaignon</persName> print terre.</foreign> <persName ref="#montaigne" type="historical">Montaig-ne</persName>. O homem natural. <persName ref="#rousseau" type="historical">Rousseau</persName>. Da Revolução Francesa ao Romantismo, à Revolução Bolchevista, à Revolução Surrealista e ao bárbaro tecnizado de <persName ref="#keyserling" type="historical">Keyserling</persName>.</p>
+        <p>Caminhamos..</p>
+        <p>Nunca fomos catequizados. Vivemos através de um direito sonâmbulo. Fizemos <persName ref="#cristo" type="biblical">Cristo</persName> nascer na <placeName ref="#bahia">Bahia</placeName>. Ou em <placeName ref="#belem">Belém do Pará</placeName>.</p>
+        <p>Mas nunca admitimos o nascimento da lógica entre nós.</p>
+        <p>Contra o <persName ref="#vieira" type="historical">Padre Vieira</persName>. Autor do nosso primeiro empréstimo, para ganhar comissão. O rei-analfabeto dissera-lhe : <q>ponha isso no papel mas sem muita lábia</q>. Fez-se o empréstimo. Gravou-se o açúcar brasileiro. <persName ref="#vieira" type="historical">Vieira</persName> deixou o dinheiro em <placeName ref="#portugal">Portugal</placeName> e nos trouxe a lábia.</p>
+        <p>O espírito recusa-se a conceber o espírito sem o corpo. O antropomorfismo.</p>
+        <p>Necessidade da vacina <term ref="#antropofagia">antropofágica</term>. Para o equilíbrio contra as religiões de meridiano. E as inquisições exteriores.</p>
+        <p>Só podemos atender ao mundo orecular.</p>
+        <p>Tínhamos a justiça codificação da vingança. A ciência codificação da Magia.</p>
+        <p><term ref="#antropofagia">Antropofagia</term>. A transformação permanente do <term ref="#tabu-totem">Tabu</term> em <term ref="#tabu-totem">totem</term>.</p>
+        <p>Contra o mundo reversível e as ideias objetivadas. Cadaverizadas. O <foreign xml:lang="en">stop</foreign> do pensamento que é dinâmico. O indivíduo vitima do sistema. Fonte das injustiças clássicas. Das injustiças românticas. E o esquecimento das conquistas interiores.</p>
+        <p>Roteiros. Roteiros. Roteiros. Roteiros. Roteiros. Roteiros. Roteiros.</p>
+        <p>O instinto Caraíba.</p>
+        <p>Morte e vida das hipóteses. Da equação eu parte do Cosmos ao axioma Cosmos parte do eu. Subsistência. Conhecimento. <term ref="#antropofagia">Antropofagia</term>.</p>
+        <p>Contra as elites vegetais. Em comunicação com o solo.</p>
+        <p>Nunca fomos catequizados. Fizemos foi Carnaval. O índio vestido de senador do Império. Fingindo de <persName ref="#pitt" type="historical">Pitt</persName>. Ou figurando nas óperas de <persName ref="#alencar" type="historical">Alencar</persName> cheio de bons sentimentos portugueses.</p>
+        <p>Já tínhamos o comunismo. Já tínhamos a língua surrealista. A idade de ouro.</p>
+        <lg type="refrao" xml:lang="tup">
+          <l>Catiti Catiti</l>
+          <l>Imara Notiá</l>
+          <l>Notiá Imara</l>
+          <l>Ipeju (**)</l>
+        </lg>
+        <p>A magia e a vida. Tínhamos a relação e a distribuição dos bens físicos, dos bens morais, dos bens dignários. E sabíamos transpor o mistério e a morte com o auxílio de algumas formas gramaticais.</p>
+        <p>Perguntei a um homem o que era o Direito. Ele me respondeu que era a garantia do exercício da possibilidade. Esse homem chamava-se <persName ref="#galli" type="character">Galli Mathias</persName>. Comia.</p>
+        <p>Só não há determinismo onde há mistério. Mas que temos nós com isso?</p>
+        <p>Contra as histórias do homem que começam no <placeName ref="#finisterra">Cabo Finisterra</placeName>. O mundo não datado. Não rubricado. Sem <persName ref="#napoleao" type="historical">Napoleão</persName>. Sem <persName ref="#cesar" type="historical">César</persName>.</p>
+        <p>A fixação do progresso por meio de catálogos e aparelhos de televisão. Só a maquinaria. E os transfusores de sangue.</p>
+        <p>Contra as sublimações antagônicas. Trazidas nas caravelas.</p>
+        <p>Contra a verdade dos povos missionários, definida pela sagacidade de um <term ref="#antropofagia">antropófago</term>, o <persName ref="#cairu" type="historical">Visconde de Cairu</persName>: – <q>É mentira muitas vezes repetida.</q></p>
+        <p>Mas não foram cruzados que vieram. Foram fugitivos de uma civilização que estamos comendo, porque somos fortes e vingativos como o Jabuti.</p>
+        <p>Se Deus é a consciência do Universo Incriado, <persName ref="#guaraci" type="myth">Guaraci</persName> é a mãe dos viventes. <persName ref="#jaci" type="myth">Jaci</persName> é a mãe dos vegetais.</p>
+        <p>Não tivemos especulação. Mas tínhamos adivinhação. Tínhamos Política que é a ciência da distribuição. E um sistema social-planetário.</p>
+        <p>As migrações. A fuga dos estados tediosos. Contra as escleroses urbanas. Contra os Conservatórios e o tédio especulativo.</p>
+        <p>De <persName ref="#wjames" type="historical">William James</persName> e <persName ref="#voronoff" type="historical">Voronoff</persName>. A transfiguração do <term ref="#tabu-totem">Tabu</term> em <term ref="#tabu-totem">totem</term>. <term ref="#antropofagia">Antropofagia</term>.</p>
+        <p>O pater famílias e a criação da Moral da Cegonha: Ignorância real das coisas + fala de imaginação + sentimento de autoridade ante a prole curiosa.</p>
+        <p>É preciso partir de um profundo ateísmo para se chegar à idéia de Deus. Mas a caraíba não precisava. Porque tinha <persName ref="#guaraci" type="myth">Guaraci</persName>.</p>
+        <p>O objetivo criado reage com os Anjos da Queda. Depois <persName ref="#moises" type="biblical">Moisés</persName> divaga. Que temos nós com isso?</p>
+        <p>Antes dos portugueses descobrirem o <placeName ref="#brasil">Brasil</placeName>, o <placeName ref="#brasil">Brasil</placeName> tinha descoberto a felicidade.</p>
+        <p>Contra o índio de tocheiro. O índio filho de Maria, afilhado de <persName ref="#catarina" type="historical">Catarina de Médicis</persName> e genro de <persName ref="#mariz" type="character">D. Antônio de Mariz</persName>.</p>
+        <p>A alegria é a prova dos nove.</p>
+        <p>No matriarcado de <placeName ref="#pindorama">Pindorama</placeName>.</p>
+        <p>Contra a Memória fonte do costume. A experiência pessoal renovada.</p>
+        <p>Somos concretistas. As ideias tomam conta, reagem, queimam gente nas praças públicas. Suprimarnos as ideias e as outras paralisias. Pelos roteiros. Acreditar nos sinais, acreditar nos instrumentos e nas estrelas.</p>
+        <p>Contra <persName ref="#goethe" type="historical">Goethe</persName>, a mãe dos Gracos, e a Corte de <persName ref="#joaovi" type="historical">D. João VI</persName>.</p>
+        <p>A alegria é a prova dos nove.</p>
+        <p>A luta entre o que se chamaria Incriado e a Criatura – ilustrada pela contradição permanente do homem e o seu <term ref="#tabu-totem">Tabu</term>. O amor cotidiano e o modus vivendi capitalista. <term ref="#antropofagia">Antropofagia</term>. Absorção do inimigo sacro. Para transformá-lo em <term ref="#tabu-totem">totem</term>. A humana aventura. A terrena finalidade. Porém, só as puras elites conseguiram realizar a <term ref="#antropofagia">antropofagia</term> carnal, que traz em si o mais alto sentido da vida e evita todos os males identificados por <persName ref="#freud" type="historical">Freud</persName>, males catequistas. O que se dá não é uma sublimação do instinto sexual. É a escala termométrica do instinto <term ref="#antropofagia">antropofágico</term>. De carnal, ele se torna eletivo e cria a amizade. Afetivo, o amor. Especulativo, a ciência. Desvia-se e transfere-se. Chegamos ao aviltamento. A baixa <term ref="#antropofagia">antropofagia</term> aglomerada nos pecados de catecismo – a inveja, a usura, a calúnia, o assassinato. Peste dos chamados povos cultos e cristianizados, é contra ela que estamos agindo.</p>
+        <p><term ref="#antropofagia">Antropófagos</term>.</p>
+        <p>Contra <persName ref="#anchieta" type="historical">Anchieta</persName> cantando as onze mil virgens do céu, na terra de Iracema, – o patriarca <persName ref="#ramalho" type="historical">João Ramalho</persName> fundador de <placeName ref="#saopaulo">São Paulo</placeName>.</p>
+        <p>A nossa independência ainda não foi proclamada. Frase típica de <persName ref="#joaovi" type="historical">D. João VI</persName>: – <q>Meu filho, põe essa coroa na tua cabeça, antes que algum aventureiro o faça!</q> Expulsamos a dinastia. É preciso expulsar o espírito bragantino, as ordenações e o rapé de <persName ref="#mariafonte" type="historical">Maria da Fonte</persName>.</p>
+        <p>Contra a realidade social, vestida e opressora, cadastrada por <persName ref="#freud" type="historical">Freud</persName> – a realidade sem complexos, sem loucura, sem prostituições e sem penitenciárias do matriarcado de <placeName ref="#pindorama">Pindorama</placeName>.</p>
+        <closer>
+          <signed><persName ref="#oswald">OSWALD DE ANDRADE</persName></signed>
+          <dateline>Em <placeName ref="#piratininga">Piratininga</placeName> <date>Ano 374 da Deglutição do Bispo Sardinha.</date></dateline>
+        </closer>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dati | Arte brasiliana in circolazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Arte brasiliana in circolazione</h1>
+<nav>
+<a href="index.html">Inizio</a>
+<a href="catalogo.html">Catalogo</a>
+<a href="item.html">Scheda</a>
+<a href="dati.html">Dati</a>
+<div class="dropdown">
+<button class="dropbtn" type="button">Modalità di accesso &#9662;</button>
+<div class="dropdown-content">
+<a href="catalogo.html#alfabetica">Elenco alfabetico</a>
+<a href="index.html#mappa">Mappa dei musei</a>
+<a href="catalogo.html#ricerca">Ricerca libera</a>
+<a href="catalogo.html#movimenti">Movimenti artistici</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="largo">
+<h2>Dati</h2>
+<p>Questa pagina raccoglie i dati strutturati del progetto e la <strong>riconciliazione</strong> con record di autorità: ogni nome locale (artista, luogo, tecnica) è collegato a un identificatore esterno stabile (VIAF, Getty, GeoNames). Clicca sull'intestazione di una colonna per ordinare la tabella.</p>
+<p>File XML: record Dublin Core in <a href="xml/item01.xml">xml/</a> | testo <a href="xml/manifesto-tei.xml">TEI del Manifesto</a>.</p>
+
+<section id="tabella-opere">
+<h3>Le 10 schede</h3>
+<div class="tabella-scroll"><table id="t-opere" class="ordinabile"></table></div>
+</section>
+<section id="tabella-persone">
+<h3>Persone (artisti e autori)</h3>
+<div class="tabella-scroll"><table id="t-persone" class="ordinabile"></table></div>
+</section>
+<section id="tabella-luoghi">
+<h3>Luoghi</h3>
+<div class="tabella-scroll"><table id="t-luoghi" class="ordinabile"></table></div>
+</section>
+<section id="tabella-assunti">
+<h3>Movimenti artistici (Getty AAT)</h3>
+<div class="tabella-scroll"><table id="t-assunti" class="ordinabile"></table></div>
+<p><small>Per ora sono riconciliati solo i movimenti con un termine trovato nell'AAT; per "Neoconcretismo" è stato usato un termine più ampio.</small></p>
+</section>
+<section id="tabella-tecniche">
+<h3>Tecniche e materiali (Getty AAT)</h3>
+<div class="tabella-scroll"><table id="t-tecniche" class="ordinabile"></table></div>
+</section>
+<section id="tabella-movimenti">
+<h3>Movimenti artistici (Getty AAT)</h3>
+<div class="tabella-scroll"><table id="t-movimenti" class="ordinabile"></table></div>
+<p><small>Per Modernismo e Neoconcretismo è stato usato un termine più ampio del movimento. La Library of Congress (LCSH) non ha dato risultati utili.</small></p>
+</section>
+</main>
+<footer><p>Progetto di Digital Humanities e patrimonio culturale, Università di Bologna.</p></footer>
+<script src="data/opere.js"></script>
+<script src="data/autorita.js"></script>
+<script>
+function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function a(url, testo) { return url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(testo) + "</a>" : ""; }
+function tabella(idTab, colonne, righe) {
+  var h = "<thead><tr>" + colonne.map(function (c) { return '<th scope="col" tabindex="0">' + c + "</th>"; }).join("") + "</tr></thead><tbody>";
+  righe.forEach(function (r) { h += "<tr>" + r.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; });
+  document.getElementById(idTab).innerHTML = h + "</tbody>";
+}
+function schede(lista) {
+  return lista.map(function (o) { return '<a href="item.html?id=' + o.id + '">' + esc(o.id) + "</a>"; }).join(", ");
+}
+var geo = {}; LUOGHI.forEach(function (l) { geo[l.citta] = l.geonames; });
+
+// 1. Le 10 schede
+tabella("t-opere", ["Scheda", "Titolo", "Artista", "Data", "Tipo", "Museo", "Città", "Inventario", "Tecnica (AAT)", "File XML"],
+  OPERE.map(function (o) {
+    return ['<a href="item.html?id=' + o.id + '">' + esc(o.id) + "</a>", esc(o.titolo), a(o.artista_autorita, o.artista), esc(o.data), esc(o.tipo),
+      esc(o.museo), a(geo[o.citta], o.citta || ""), esc(o.numero_inventario), a(o.tecnica_aat, o.tecnica_aat ? o.tecnica_aat.split("/").pop() : ""),
+      a("xml/" + o.id + ".xml", o.id + ".xml")];
+  }));
+// 2. Persone
+tabella("t-persone", ["Nome", "Vita", "VIAF", "Getty ULAN", "Schede"],
+  PERSONE.map(function (p) {
+    var sue = OPERE.filter(function (o) { return o.artista === p.nome; });
+    return [esc(p.nome), esc(p.vita),
+      a(p.viaf && "https://viaf.org/viaf/" + p.viaf + "/", p.viaf || ""), a(p.ulan && "http://vocab.getty.edu/ulan/" + p.ulan, p.ulan || ""), schede(sue)];
+  }));
+// 3. Luoghi
+tabella("t-luoghi", ["Città", "Paese", "GeoNames", "Schede"],
+  LUOGHI.map(function (l) {
+    var qui = OPERE.filter(function (o) { return o.citta === l.citta; });
+    return [esc(l.citta), esc(l.paese), a(l.geonames, l.geonames.split("/")[3]), schede(qui)];
+  }));
+// 3b. Movimenti artistici
+tabella("t-assunti", ["Termine AAT", "AAT", "Movimento del progetto", "Schede"],
+  ASSUNTI.map(function (t) {
+    var qui = OPERE.filter(function (o) { return (o.assunto_aat || "").split(" ").map(function (u) { return u.split("/").pop(); }).indexOf(t.aat) >= 0; });
+    return [esc(t.termine), a("http://vocab.getty.edu/aat/" + t.aat, t.aat), esc(t.movimento), schede(qui)];
+  }));
+// 4. Tecniche
+tabella("t-tecniche", ["Termine", "AAT", "Schede"],
+  TECNICHE.map(function (t) {
+    var qui = OPERE.filter(function (o) { return o.tecnica_aat && o.tecnica_aat.split("/").pop() === t.aat; });
+    return [esc(t.termine), a("http://vocab.getty.edu/aat/" + t.aat, t.aat), schede(qui)];
+  }));
+
+// 5. Movimenti artistici
+var righeMov = [];
+MOVIMENTI.forEach(function (m) {
+  var qui = OPERE.filter(function (o) { return o.movimento === m.movimento; });
+  m.termini.forEach(function (t) {
+    righeMov.push([esc(m.movimento), esc(t.termine), a("http://vocab.getty.edu/aat/" + t.aat, t.aat), esc(t.corrispondenza), schede(qui)]);
+  });
+});
+tabella("t-movimenti", ["Movimento", "Termine AAT", "AAT", "Corrispondenza", "Schede"], righeMov);
+
+// Ordinamento: clic sull'intestazione
+document.querySelectorAll("table.ordinabile").forEach(function (t) {
+  t.querySelectorAll("th").forEach(function (th, i) {
+    function ordina() {
+      var corpo = t.tBodies[0], righe = Array.prototype.slice.call(corpo.rows);
+      var su = th.getAttribute("data-ordine") !== "su";
+      righe.sort(function (x, y) {
+        var r = x.cells[i].textContent.localeCompare(y.cells[i].textContent, "it", { numeric: true });
+        return su ? r : -r;
+      });
+      t.querySelectorAll("th").forEach(function (h) { h.removeAttribute("data-ordine"); });
+      th.setAttribute("data-ordine", su ? "su" : "giu");
+      righe.forEach(function (r) { corpo.appendChild(r); });
+    }
+    th.onclick = ordina;
+    th.onkeydown = function (e) { if (e.key === "Enter") ordina(); };
+  });
+});
+</script>
+</body>
+</html>

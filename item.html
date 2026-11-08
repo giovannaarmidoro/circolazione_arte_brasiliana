@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scheda | Arte brasiliana in circolazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Arte brasiliana in circolazione</h1>
+<nav>
+<a href="index.html">Inizio</a>
+<a href="catalogo.html">Catalogo</a>
+<a href="item.html">Scheda</a>
+<a href="dati.html">Dati</a>
+<div class="dropdown">
+<button class="dropbtn" type="button">Modalità di accesso &#9662;</button>
+<div class="dropdown-content">
+<a href="catalogo.html#alfabetica">Elenco alfabetico</a>
+<a href="index.html#mappa">Mappa dei musei</a>
+<a href="catalogo.html#ricerca">Ricerca libera</a>
+<a href="catalogo.html#movimenti">Movimenti artistici</a>
+</div>
+</div>
+</nav>
+</header>
+<main class="con-aside">
+<article id="item">
+<p>Caricamento della scheda…</p>
+</article>
+<aside>
+<h3>Oggetti correlati</h3>
+<ul id="correlati"></ul>
+</aside>
+</main>
+<footer><p>Progetto di Digital Humanities e patrimonio culturale, Università di Bologna.</p></footer>
+<script src="data/opere.js"></script>
+<script src="data/biografie.js"></script>
+<script src="data/autorita.js"></script>
+<script>
+// Quale scheda mostrare? Lo dice l'indirizzo: item.html?id=item06
+var id = new URLSearchParams(location.search).get("id") || "item01";
+var o = OPERE.find(function (x) { return x.id === id; }) || OPERE[0];
+id = o.id;
+
+var GEONAMES = {
+  "Buenos Aires": "https://www.geonames.org/3435910/buenos-aires.html",
+  "New York": "https://www.geonames.org/5128581/new-york-city.html",
+  "Parigi": "https://www.geonames.org/2988507/paris.html",
+  "Londra": "https://www.geonames.org/2643743/london.html",
+  "Houston": "https://www.geonames.org/4699066/houston.html",
+  "São Paulo": "https://www.geonames.org/3448439/sao-paulo.html"
+};
+function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function link(url, testo) { return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(testo) + "</a>"; }
+function movimentoAat(o) {
+  if (!o.movimento_aat) return "";
+  return " " + o.movimento_aat.split(" ").map(function (u) { return "(" + link(u, "AAT " + u.split("/").pop()) + ")"; }).join(" ");
+}
+function riga(etichetta, valore) { return valore ? "<dt>" + etichetta + "</dt><dd>" + valore + "</dd>" : ""; }
+
+document.title = o.titolo + " | Arte brasiliana in circolazione";
+var luogo = [o.museo, o.citta, o.paese].filter(Boolean).join(", ");
+var assunti = (o.assunto_aat || "").split(" ").filter(Boolean).map(function (u) {
+  var codice = u.split("/").pop();
+  var t = ASSUNTI.find(function (x) { return x.aat === codice; });
+  return link(u, t ? t.termine : codice);
+}).join(", ");
+var autore = o.artista_autorita ? link(o.artista_autorita, o.artista + " (VIAF)") : esc(o.artista);
+
+var h = "<h2>" + esc(o.titolo) + "</h2>";
+h += '<figure><img src="' + esc(o.immagine) + '" alt="' + esc(o.titolo) + '" onerror="this.style.display=\'none\';document.getElementById(\'senza-immagine\').style.display=\'flex\'">';
+h += '<div id="senza-immagine" class="senza-immagine"><p>Immagine non riprodotta qui per motivi di diritti.' + (o.fonte_url ? " Vedi l'opera sul sito della fonte: " + link(o.fonte_url, "pagina della fonte") : "") + "</p></div>";
+h += "<figcaption>" + esc(o.artista) + (o.data ? ", " + esc(o.data) : "") + (luogo ? ". " + esc(luogo) : "") + "</figcaption></figure>";
+if (o.descrizione) h += "<p>" + esc(o.descrizione) + "</p>";
+
+h += '<section><h3>Metadati</h3><dl class="metadati">';
+h += riga("Artista", autore) + riga("Data", esc(o.data)) + riga("Tipo", esc(o.tipo));
+h += riga("Tecnica (AAT)", o.tecnica_aat ? link(o.tecnica_aat, o.tecnica_aat.split("/").pop()) : "");
+h += riga("Movimento", esc(o.movimento) + movimentoAat(o)) + riga("Assunto (AAT)", assunti) + riga("Dove si trova", esc(luogo));
+h += riga("N. di inventario", esc(o.numero_inventario)) + riga("Identificativo", esc(o.id));
+h += riga("Provenienza", o.provenienza ? '<button type="button" class="comprimibile" aria-expanded="false">Mostra la provenienza</button><div class="contenuto-comprimibile" hidden>' + esc(o.provenienza) + "</div>" : "");
+h += "</dl></section>";
+
+var tappe = BIOGRAFIE[id] || [];
+if (tappe.length) {
+  h += '<section><h3>Biografia dell\'oggetto</h3><ol class="linea-del-tempo">';
+  tappe.forEach(function (e) { h += "<li>" + (e[0] ? "<strong>" + esc(e[0]) + "</strong> " : "") + esc(e[1]) + "</li>"; });
+  h += "</ol></section>";
+}
+if (MEDIA[id]) {
+  h += '<section><h3>Video</h3><iframe src="' + esc(MEDIA[id].url) + '" title="' + esc(MEDIA[id].titolo) + '" allowfullscreen></iframe><p>' + esc(MEDIA[id].titolo) + "</p></section>";
+}
+h += "<section><h3>File e link esterni</h3><ul>";
+h += "<li>Record Dublin Core: " + link("xml/" + id + ".xml", id + ".xml") + "</li>";
+if (id === "item08") h += "<li>Testo completo in TEI: " + link("xml/manifesto-tei.xml", "manifesto-tei.xml") + "</li>";
+if (o.fonte_url) h += "<li>Fonte: " + link(o.fonte_url, "pagina della fonte") + "</li>";
+if (o.artista_ulan) h += "<li>Autorità dell'artista (Getty ULAN): " + link(o.artista_ulan, o.artista_ulan.split("/").pop()) + "</li>";
+if (GEONAMES[o.citta]) h += "<li>Luogo (GeoNames): " + link(GEONAMES[o.citta], o.citta) + "</li>";
+h += "</ul></section>";
+document.getElementById("item").innerHTML = h;
+
+// Zoom dell'immagine (modal): clic sull'immagine per ingrandirla, clic o Esc per chiudere
+var im = document.querySelector("#item figure img");
+if (im) {
+  im.style.cursor = "zoom-in";
+  im.addEventListener("click", function () {
+    var m = document.createElement("div");
+    m.id = "modale"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true");
+    m.innerHTML = '<img src="' + esc(o.immagine) + '" alt="' + esc(o.titolo) + '"><p>' + esc(o.titolo) + "</p>";
+    function chiudi() { m.remove(); document.removeEventListener("keydown", tasto); }
+    function tasto(e) { if (e.key === "Escape") chiudi(); }
+    m.addEventListener("click", chiudi);
+    document.addEventListener("keydown", tasto);
+    document.body.appendChild(m);
+  });
+}
+
+// Provenienza comprimibile (collapsible): il pulsante mostra o nasconde il testo
+document.querySelectorAll(".comprimibile").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var c = b.nextElementSibling, aperto = !c.hidden;
+    c.hidden = aperto;
+    b.setAttribute("aria-expanded", String(!aperto));
+    b.textContent = aperto ? "Mostra la provenienza" : "Nascondi la provenienza";
+  });
+});
+
+// Oggetti correlati: relazioni indicate a mano + opere dello stesso movimento
+var ids = (RELAZIONI[id] || []).slice();
+OPERE.forEach(function (x) { if (x.id !== id && x.movimento === o.movimento && ids.indexOf(x.id) < 0) ids.push(x.id); });
+var lis = "";
+ids.slice(0, 5).forEach(function (i) {
+  var x = OPERE.find(function (y) { return y.id === i; });
+  if (x) lis += '<li><a href="item.html?id=' + x.id + '">' + esc(x.titolo) + "</a> <small>(" + esc(x.artista) + ")</small></li>";
+});
+document.getElementById("correlati").innerHTML = lis || "<li>Nessun oggetto correlato.</li>";
+</script>
+</body>
+</html>
