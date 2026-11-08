@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Audiodescrizione di Babel</dc:title>
+  <dc:creator>Tate</dc:creator>
+  <dc:subject>Arte concettuale</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300264827</dcterms:subject>
+  <dc:description xml:lang="it">Descrizione visiva approfondita di Babel, in audio e immagine, messa a disposizione dalla Tate.</dc:description>
+  <dc:publisher>Tate</dc:publisher>
+  <dc:type>MovingImage</dc:type>
+  <dc:type xml:lang="it">video</dc:type>
+  <dc:format>text/html</dc:format>
+  <dc:identifier>item09</dc:identifier>
+  <dc:language>en</dc:language>
+  <dc:source>https://www.tate.org.uk/art/artworks/meireles-babel-t14041/audio-description-babel</dc:source>
+  <dcterms:relation>item05.xml</dcterms:relation>
+  <dc:coverage>Londra</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/2643743/london.html</dcterms:spatial>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

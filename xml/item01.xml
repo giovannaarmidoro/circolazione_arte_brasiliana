@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Abaporu</dc:title>
+  <dc:creator>Tarsila do Amaral</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/18032903/</dcterms:creator>
+  <dc:subject>Modernismo e Antropofagia</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Dipinto di Tarsila do Amaral del 1928, regalato a Oswald de Andrade e legato al Manifesto antropofago.</dc:description>
+  <dc:publisher>MALBA</dc:publisher>
+  <dc:date>1928</dc:date>
+  <dc:type>StillImage</dc:type>
+  <dc:type xml:lang="it">dipinto</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item01</dc:identifier>
+  <dc:identifier>2003.33</dc:identifier>
+  <dc:source>https://coleccion.malba.org.ar/Detail/objects/201</dc:source>
+  <dcterms:relation>item08.xml</dcterms:relation>
+  <dc:coverage>Buenos Aires</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/3435910/buenos-aires.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Olio su tela</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300015050</dcterms:medium>
+  <dcterms:extent>84,5 x 72,5 cm</dcterms:extent>
+  <dcterms:provenance xml:lang="es">Colección Malba. Donación Eduardo F. Costantini, 2003</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

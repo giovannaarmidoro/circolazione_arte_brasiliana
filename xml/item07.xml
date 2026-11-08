@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Green Tilework in Live Flesh</dc:title>
+  <dc:creator>Adriana Varejão</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/50156068/</dcterms:creator>
+  <dcterms:creator xsi:type="dcterms:URI">http://id.loc.gov/authorities/names/n98910593</dcterms:creator>
+  <dcterms:creator xsi:type="dcterms:URI">http://vocab.getty.edu/ulan/500329411</dcterms:creator>
+  <dc:subject>Arte contemporanea e postcoloniale</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300264737</dcterms:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300263176</dcterms:subject>
+  <dc:description xml:lang="it">Opera di Adriana Varejão del 2000, presentata alla Tate nel 2026 dalla Tate Americas Foundation.</dc:description>
+  <dc:publisher>Tate Modern</dc:publisher>
+  <dc:date>2000</dc:date>
+  <dc:type>StillImage</dc:type>
+  <dc:type xml:lang="it">dipinto</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item07</dc:identifier>
+  <dc:identifier>L02325</dc:identifier>
+  <dc:source>https://www.tate.org.uk/art/artworks/varejao-green-tilework-in-live-flesh-l02325</dc:source>
+  <dc:coverage>Londra</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/2643743/london.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Olio su tela e poliuretano su alluminio e legno</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300015050</dcterms:medium>
+  <dcterms:provenance xml:lang="en">Presented by the Tate Americas Foundation 2026</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

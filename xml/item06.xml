@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Bicho (Máquina)</dc:title>
+  <dcterms:alternative>Bicho (máquina)</dcterms:alternative>
+  <dc:creator>Lygia Clark</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/118597505/</dcterms:creator>
+  <dc:subject>Neoconcretismo</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021436</dcterms:subject>
+  <dc:description xml:lang="it">Scultura articolata in metallo dorato che il pubblico può aprire e riconfigurare; fa parte della collezione Adolpho Leirner.</dc:description>
+  <dc:publisher>MFAH</dc:publisher>
+  <dc:date>1962</dc:date>
+  <dc:type>PhysicalObject</dc:type>
+  <dc:type xml:lang="it">scultura</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item06</dc:identifier>
+  <dc:identifier>2005.470</dc:identifier>
+  <dc:source>https://emuseum.mfah.org/objects/73736/bicho-maquina</dc:source>
+  <dc:coverage>Houston</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/4699066/houston.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Metallo dorato con cerniere</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300184735</dcterms:medium>
+  <dcterms:extent>90,2 x 53,3 x 54,6 cm</dcterms:extent>
+  <dcterms:provenance xml:lang="en">The artist; Ralph Camargo, São Paulo; Adolpho Leirner, São Paulo, 1972; purchased by MFAH, 2005. Credit line: The Adolpho Leirner Collection of Brazilian Constructive Art, museum purchase funded by the Caroline Wiess Law Accessions Endowment</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

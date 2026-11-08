@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Guerra e Paz</dc:title>
+  <dcterms:alternative>War and Peace</dcterms:alternative>
+  <dc:creator>Candido Portinari</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/5737825/</dcterms:creator>
+  <dc:subject>Modernismo brasiliano</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Due murali di Candido Portinari, Guerra e Paz, donati dal Brasile all'ONU nel 1957 e installati nell'atrio dei delegati.</dc:description>
+  <dc:publisher>Sede dell'ONU</dc:publisher>
+  <dc:date>1957</dc:date>
+  <dc:type>StillImage</dc:type>
+  <dc:type xml:lang="it">pannello</dc:type>
+  <dc:format>image/jpeg</dc:format>
+  <dc:identifier>item03</dc:identifier>
+  <dc:identifier>UNNY125G.02 (painel Paz)</dc:identifier>
+  <dc:source>https://www.un.org/ungifts/war-and-peace-peace</dc:source>
+  <dcterms:relation>item10.xml</dcterms:relation>
+  <dc:coverage>New York</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/5128581/new-york-city.html</dcterms:spatial>
+  <dcterms:medium xml:lang="it">Olio su pannelli di legno</dcterms:medium>
+  <dcterms:medium xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300015050</dcterms:medium>
+  <dcterms:extent>46 x 34 piedi</dcterms:extent>
+  <dcterms:provenance xml:lang="it">Negli anni Cinquanta il Segretario generale Trygve Lie chiese agli Stati membri dell'ONU un'opera d'arte che rappresentasse la loro cultura. Il Brasile commissionò a Candido Portinari un'opera sul tema guerra e pace; l'artista realizzò due murali, Guerra (parete est) e Pace (parete ovest). Donati all'ONU il 6 settembre 1957; reinaugurati dopo il restauro nel 2015.</dcterms:provenance>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Manifesto Antropófago</dc:title>
+  <dc:creator>Oswald de Andrade</dc:creator>
+  <dcterms:creator xsi:type="dcterms:URI">https://viaf.org/viaf/39372900/</dcterms:creator>
+  <dc:subject>Modernismo e Antropofagia</dc:subject>
+  <dcterms:subject xsi:type="dcterms:URI">http://vocab.getty.edu/aat/300021474</dcterms:subject>
+  <dc:description xml:lang="it">Manifesto di Oswald de Andrade pubblicato nella Revista de Antropofagia, n. 1, nel maggio 1928.</dc:description>
+  <dc:publisher>Revista de Antropofagia</dc:publisher>
+  <dc:date>1928</dc:date>
+  <dc:type>Text</dc:type>
+  <dc:type xml:lang="it">testo</dc:type>
+  <dc:format>application/xml</dc:format>
+  <dc:identifier>item08</dc:identifier>
+  <dc:language>pt</dc:language>
+  <dc:source>https://digital.bbm.usp.br/view/?45000033273&amp;bbm/7064#page/2/mode/2up</dc:source>
+  <dcterms:hasFormat>manifesto-tei.xml</dcterms:hasFormat>
+  <dcterms:relation>item01.xml</dcterms:relation>
+  <dcterms:relation>item02.xml</dcterms:relation>
+  <dc:coverage>São Paulo</dc:coverage>
+  <dcterms:spatial xsi:type="dcterms:URI">https://www.geonames.org/3448439/sao-paulo.html</dcterms:spatial>
+  <dc:rights xml:lang="it">Opera e immagine soggette ai diritti dei rispettivi titolari; si veda la fonte.</dc:rights>
+</record>
