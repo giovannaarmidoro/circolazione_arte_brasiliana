@@ -1,1 +1,17 @@
+Cartella delle immagini
+=======================
+Inserire qui le immagini delle opere, in formato JPG, con questi nomi esatti (minuscolo, senza spazi):
 
+abaporu.jpg              (item01 - Abaporu)
+a-lua.jpg                (item02 - A Lua)
+guerra-e-paz.jpg         (item03 - Guerra e Paz)
+danse-populaire.jpg      (item04 - Danse populaire brésilienne)
+babel.jpg                (item05 - Babel)
+bicho.jpg                (item06 - Bicho (Máquina))
+green-tilework.jpg       (item07 - Green Tilework in Live Flesh)
+manifesto.jpg            (item08 - Manifesto Antropófago)
+audio-babel.jpg          (item09 - Audiodescrizione di Babel)
+video-guerra-e-paz.jpg   (item10 - Documenti su Guerra e Paz)
+
+Se un'immagine manca, il sito mostra un avviso e il link alla fonte.
+Usare solo immagini di cui si possono pubblicare i diritti, a bassa risoluzione, e citare la fonte.
